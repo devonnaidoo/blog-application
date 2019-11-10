@@ -6,6 +6,8 @@ var logger = require("morgan");
 var bodyParser = require("body-parser");
 var session = require("express-session");
 var multer = require("multer");
+// Handle File Uploads
+var upload = multer({ dest: "./uploads" });
 var moment = require("moment");
 var expressValidator = require("express-monk");
 
@@ -23,8 +25,26 @@ app.set("view engine", "jade");
 app.use(logger("dev"));
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
+// Validator middleware
+app.use(expressValidator());
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, "public")));
+
+// Express Session middleware - Handle Sessions
+app.use(
+  session({
+    secret: "secret",
+    saveUninitialized: true,
+    resave: true
+  })
+);
+
+// Flash Express messages middleware
+app.use(require("connect-flash")());
+app.use(function(req, res, next) {
+  res.locals.messages = require("express-messages")(req, res);
+  next();
+});
 
 // Making the database accessible to the router
 app.use(() => {
