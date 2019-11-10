@@ -48,7 +48,7 @@ app.use(function(req, res, next) {
 });
 
 // Making the database accessible to the router
-app.use(() => {
+app.use((req, res, next) => {
   req.db = db;
   next();
 });
