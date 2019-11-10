@@ -9,7 +9,7 @@ var multer = require("multer");
 // Handle File Uploads
 var upload = multer({ dest: "./uploads" });
 var moment = require("moment");
-var expressValidator = require("express-monk");
+var expressValidator = require("express-validator");
 
 var db = require("monk")("localhost/blogapp");
 
