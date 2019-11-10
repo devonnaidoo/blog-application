@@ -2,3 +2,14 @@
 nav {
   background-color: rgb(43, 43, 43) !important;
 }
+.nav-btn {
+  background-color: rgb(230, 230, 230);
+  color: rgb(39, 39, 39) !important;
+  padding: 8px 10px !important;
+  margin: 0px 5px;
+  min-height: 0 !important;
+  border: none;
+}
+.nav-btn svg {
+  margin: 0 20px;
+}
