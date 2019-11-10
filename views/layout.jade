@@ -12,22 +12,47 @@ html
     script(src='https://cdn.jsdelivr.net/npm/uikit@3.2.3/dist/js/uikit-icons.min.js')
     link(href='/stylesheets/style.css', rel='stylesheet')
   body
-    div(uk-sticky='sel-target: .uk-navbar-container; cls-active: uk-navbar-sticky; bottom: #transparent-sticky-navbar')
-      nav.uk-navbar-container(uk-navbar='dropbar: true;', style='position: relative; z-index: 980;')
-        .uk-navbar-left
-          ul.uk-navbar-nav
-            li.uk-active
-              a(href='#') Active
-            li
-              a(href='#') Parent
-              .uk-navbar-dropdown
-                ul.uk-nav.uk-navbar-dropdown-nav
-                  li.uk-active
-                    a(href='#') Active
-                  li
-                    a(href='#') Item
-                  li
-                    a(href='#') Item
-            li
-              a(href='#') Item
+    nav.uk-navbar-container(uk-navbar='')
+      .uk-navbar-left
+        ul.uk-navbar-nav
+          li.uk-active
+            a(href='#') Active
+          li
+            a(href='#') Parent
+            .uk-navbar-dropdown
+              ul.uk-nav.uk-navbar-dropdown-nav
+                li.uk-active
+                  a(href='#') Active
+                li
+                  a(href='#') Item
+                li.uk-nav-header Header
+                li
+                  a(href='#') Item
+                li
+                  a(href='#') Item
+                li.uk-nav-divider
+                li
+                  a(href='#') Item
+          li
+            a(href='#') Item
+      .uk-navbar-right
+        ul.uk-navbar-nav
+          li
+            a(href='#') Parent
+            .uk-navbar-dropdown
+              ul.uk-nav.uk-navbar-dropdown-nav
+                li.uk-active
+                  a(href='#') Active
+                li
+                  a(href='#') Item
+                li.uk-nav-header Header
+                li
+                  a(href='#') Item
+                li
+                  a(href='#') Item
+                li.uk-nav-divider
+                li
+                  a(href='#') Item
 
+    script(src='/javascript/main.js')
+     
