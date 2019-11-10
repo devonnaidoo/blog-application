@@ -15,44 +15,14 @@ html
     nav.uk-navbar-container(uk-navbar='')
       .uk-navbar-left
         ul.uk-navbar-nav
-          li.uk-active
-            a(href='#') Active
-          li
-            a(href='#') Parent
-            .uk-navbar-dropdown
-              ul.uk-nav.uk-navbar-dropdown-nav
-                li.uk-active
-                  a(href='#') Active
-                li
-                  a(href='#') Item
-                li.uk-nav-header Header
-                li
-                  a(href='#') Item
-                li
-                  a(href='#') Item
-                li.uk-nav-divider
-                li
-                  a(href='#') Item
-          li
-            a(href='#') Item
-      .uk-navbar-right
+          .uk-container
+            a(class="uk-navbar-item uk-logo", href='#') Blog
+      .uk-navbar-center
         ul.uk-navbar-nav
           li
-            a(href='#') Parent
-            .uk-navbar-dropdown
-              ul.uk-nav.uk-navbar-dropdown-nav
-                li.uk-active
-                  a(href='#') Active
-                li
-                  a(href='#') Item
-                li.uk-nav-header Header
-                li
-                  a(href='#') Item
-                li
-                  a(href='#') Item
-                li.uk-nav-divider
-                li
-                  a(href='#') Item
-
+            a(href='#') Item
+          li
+            a(href='#') Item
     script(src='/javascript/main.js')
+  block content
      
