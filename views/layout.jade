@@ -10,5 +10,19 @@ html
     script(src='https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.4.1/semantic.min.js', integrity='sha256-t8GepnyPmw9t+foMh3mKNvcorqNHamSKtKRxxpUEgFI=', crossorigin='anonymous')
     link(href='/stylesheets/style.css', rel='stylesheet')
   body
-    block content
+    .ui.secondary.menu
+    a.active.item
+      | Home
+    a.item
+      | Messages
+    a.item
+      | Friends
+    .right.menu
+      .item
+        .ui.icon.input
+          input(type='text', placeholder='Search...')
+          i.search.link.icon
+      a.ui.item
+        | Logout
+  block content
 
