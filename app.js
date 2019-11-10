@@ -11,6 +11,7 @@ var upload = multer({ dest: "./uploads" });
 var moment = require("moment");
 var expressValidator = require("express-validator");
 
+var mongo = require("mongodb");
 var db = require("monk")("localhost/blogapp");
 
 var indexRouter = require("./routes/index");
