@@ -12,6 +12,10 @@ block content
                                 strong #{post.author}
                             p.uk-text-meta.uk-margin-remove-top
                                 time #{moment(post.date).format("dddd, MMM Do YYYY")}
+                             if post.topic == "Tech"
+                                span.uk-label #{post.topic}
+                            else if post.topic == "Nature"
+                                span.uk-label-success #{post.topic}
                 .uk-card-body
                     article
                         p
