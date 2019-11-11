@@ -7,7 +7,13 @@ block content
                 .uk-card-header
                     .uk-grid-small.uk-flex-middle(uk-grid='')
                         .uk-width-expand
-                        a(href='/posts/show/#{post._id}').uk-card-title.uk-margin-remove-bottom #{post.title}
-                        p.uk-text-meta.uk-margin-remove-top
-                            time(datetime='2016-04-01T19:00') #{moment(post.date).format("dddd, MMM Do YYYY")}
+                            a(href='/posts/show/#{post._id}').uk-card-title.uk-margin-remove-bottom #{post.title}
+                            p.uk-text-meta.uk-margin-remove-top | By 
+                                strong #{post.author}
+                            p.uk-text-meta.uk-margin-remove-top
+                                time #{moment(post.date).format("dddd, MMM Do YYYY")}
+                .uk-card-body
+                    article
+                        p
+                            | #{post.body}
                     
