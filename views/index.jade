@@ -3,7 +3,11 @@ extends layout
 block content
     if posts
         each post, i in posts
-            .post
-                h1
-                    a(href='/posts/show/#{post._id}') #{post.title}
+            .uk-card.uk-card-default(class='uk-width-1-2@m')
+                .uk-card-header
+                    .uk-grid-small.uk-flex-middle(uk-grid='')
+                        .uk-width-expand
+                        a(href='/posts/show/#{post._id}').uk-card-title.uk-margin-remove-bottom #{post.title}
+                        p.uk-text-meta.uk-margin-remove-top
+                            time(datetime='2016-04-01T19:00') #{moment(post.date).format()}
                     
