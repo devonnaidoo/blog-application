@@ -7,7 +7,7 @@ block content
                 .uk-card-header
                     .uk-grid-small.uk-flex-middle(uk-grid='')
                         .uk-width-expand
-                            a(href='/posts/show/#{post._id}').uk-card-title.uk-margin-remove-bottom #{post.title}
+                            a(href='/posts/show/#{post._id}', target="_blank").uk-card-title.uk-margin-remove-bottom #{post.title}
                             p.uk-text-meta.uk-margin-remove-top | By 
                                 strong #{post.author}
                             p.uk-text-meta.uk-margin-remove-top
@@ -16,4 +16,6 @@ block content
                     article
                         p
                             | #{post.body}
+                .uk-card-footer
+                    a.uk-button.uk-button-text(href='/posts/show/#{post._id}', target="_blank") Read more
                     
