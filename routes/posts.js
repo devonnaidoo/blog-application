@@ -1,5 +1,8 @@
 var express = require("express");
 var router = express.Router();
+var multer = require("multer");
+// Handle File Uploads
+var upload = multer({ dest: "./uploads/" });
 
 /* GET listing. */
 router.get("/add", function(req, res, next) {
