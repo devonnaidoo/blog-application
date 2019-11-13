@@ -2,35 +2,19 @@ extends layout
 
 block content
     .uk-container.uk-margin-top
-        h1.uk-padding What's on your mind?
+        h1.uk-padding Add a new topic
         ul
             if errors 
                 each error, i in errors
                     li #{error.msg}
-    .uk-container.uk-margin
-        form.uk-form-horizontal.uk-margin-large(method='post', action='/posts/add', enctype='multipart/form-data')
-            .uk-margin
-                label.uk-form-label(for='form-horizontal-text') Title
-                .uk-form-controls
-                    input#form-horizontal-text.uk-input(type='text', placeholder="Add an interesting title here.", name="title")
-            .uk-margin
-                label.uk-form-label(for='form-horizontal-text') Author
-                .uk-form-controls
-                    input#form-horizontal-text.uk-input(type='text', placeholder="Who's the mastermind behind this post?", name="author")
-            .uk-margin
-                label.uk-form-label(for='form-horizontal-select') Topic
-                .uk-form-controls
-                    select#form-horizontal-select.uk-select(name="topic")
-                        each topic, i in topics
-                            option(value="#{topic.name}") #{topic.name}
-            .uk-margin
-                textarea.uk-textarea(rows='5', placeholder='The floor is yours', name="body", id="body")
-            .uk-margin
-                div(uk-form-custom='')
-                    input.uk-button.uk-button-default(type='file', name="blogimage")
-                    button.uk-button.uk-button-default(type='button', tabindex='-1') Select Image       
-            .uk-margin
-                input(class="uk-button uk-button-default", type="submit", name="submit", value="Submit Post")
-            script(src="/vendor/ckeditor/ckeditor.js")
-            script
-                | CKEDITOR.replace('body');
+        h3 Available Topics : 
+            each topic, i in topics
+                span.uk-label.uk-margin-right #{topic.name}
+        .uk-container.uk-margin
+            form.uk-form-horizontal.uk-margin-large(method='post', action='/topics/add', enctype='multipart/form-data')
+                .uk-margin
+                    label.uk-form-label(for='form-horizontal-text') Topic
+                    .uk-form-controls
+                        input#form-horizontal-text.uk-input(type='text', placeholder="Add topic here.", name="topic")
+                .uk-margin
+                    input(class="uk-button uk-button-default", type="submit", name="submit", value="Submit Post")

@@ -15,4 +15,38 @@ router.get("/add", function(req, res, next) {
   });
 });
 
+router.post("/add", function(req, res, next) {
+  // Storing form values
+  var topic = req.body.topic;
+
+  // Form Validation
+  req.checkBody("topic", "Oops, your post requires a title").notEmpty();
+
+  // Checking Errors
+  var errors = req.validationErrors();
+
+  if (errors) {
+    res.render("newTopic", {
+      errors: errors
+    });
+  } else {
+    var posts = db.get("topics");
+    // Add to db
+    posts.insert(
+      {
+        name: topic
+      },
+      (err, post) => {
+        if (err) {
+          res.send(err);
+        } else {
+          req.flash("success", "Topic Added");
+          res.location("/");
+          res.redirect("/");
+        }
+      }
+    );
+  }
+});
+
 module.exports = router;
