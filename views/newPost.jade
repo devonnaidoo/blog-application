@@ -1,0 +1,29 @@
+extends layout
+
+block content
+    .uk-container.uk-margin-top
+        h1 What's on your mind?
+        ul
+            if errors 
+                each error, i in errors
+                    li #{error.msg}
+    .uk-container.uk-margin
+        form.uk-form-horizontal.uk-margin-large(method='post', action='/posts/add', encrypt='multipart/form-data')
+            .uk-margin
+                label.uk-form-label(for='form-horizontal-text') Title
+                .uk-form-controls
+                    input#form-horizontal-text.uk-input(type='text', placeholder='Some text...')
+            .uk-margin
+                label.uk-form-label(for='form-horizontal-text') Author
+                .uk-form-controls
+                    input#form-horizontal-text.uk-input(type='text', placeholder='Some text...')
+            .uk-margin
+                label.uk-form-label(for='form-horizontal-select') Topic
+                .uk-form-controls
+                    select#form-horizontal-select.uk-select
+            .uk-margin
+                textarea.uk-textarea(rows='5', placeholder='Textarea')
+            .uk-margin
+                div(uk-form-custom='')
+                    input(type='file')
+                    button.uk-button.uk-button-default(type='button', tabindex='-1') Select
