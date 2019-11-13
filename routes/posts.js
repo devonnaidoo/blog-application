@@ -26,8 +26,10 @@ router.post("/add", upload.single("blogimage"), function(req, res, next) {
     var blogimage = "default-image.jpg";
   }
 
-  req.checkBody("title", "Oops, your post requires a title");
-  req.checkBody("body", "Oops, your post requires a body");
+  // Form Validation
+  req.checkBody("title", "Oops, your post requires a title").notEmpty;
+  req.checkBody("body", "Oops, your post requires a body").notEmpty;
+  req.checkBody("author", "Oops, your post requires a author").notEmpty;
 });
 
 module.exports = router;
