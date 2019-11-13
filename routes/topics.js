@@ -14,3 +14,5 @@ router.get("/add", function(req, res, next) {
   res.render("newTopic", { title: "New Topic" });
   //   });
 });
+
+module.exports = router;
