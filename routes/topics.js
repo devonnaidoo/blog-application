@@ -9,10 +9,10 @@ var db = require("monk")("localhost/blogapp");
 
 /* GET listing. */
 router.get("/add", function(req, res, next) {
-  //   var topics = db.get("topics");
-  //   topics.find({}, {}, (err, topics) => {
-  res.render("newTopic", { title: "New Topic" });
-  //   });
+  var topics = db.get("topics");
+  topics.find({}, {}, (err, topics) => {
+    res.render("newTopic", { title: "New Topic", topics: topics });
+  });
 });
 
 module.exports = router;
