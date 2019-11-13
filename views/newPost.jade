@@ -2,7 +2,7 @@ extends layout
 
 block content
     .uk-container.uk-margin-top
-        h1 What's on your mind?
+        h1.uk-padding What's on your mind?
         ul
             if errors 
                 each error, i in errors
@@ -26,4 +26,6 @@ block content
             .uk-margin
                 div(uk-form-custom='')
                     input(type='file')
-                    button.uk-button.uk-button-default(type='button', tabindex='-1') Select
+                    button.uk-button.uk-button-default(type='button', tabindex='-1') Select Image
+            .uk-margin
+                input(class="uk-button uk-button-default", type="submit", value="Submit Post")
