@@ -8,7 +8,7 @@ block content
                 each error, i in errors
                     li #{error.msg}
     .uk-container.uk-margin
-        form.uk-form-horizontal.uk-margin-large(method='post', action='/posts/add', encrypt='multipart/form-data')
+        form.uk-form-horizontal.uk-margin-large(method='post', action='/posts/add', enctype='multipart/form-data')
             .uk-margin
                 label.uk-form-label(for='form-horizontal-text') Title
                 .uk-form-controls
@@ -23,9 +23,11 @@ block content
                     select#form-horizontal-select.uk-select(name="topic")
             .uk-margin
                 textarea.uk-textarea(rows='5', placeholder='The floor is yours', name="body", id="body")
+            //- .uk-margin
+            //-     div(uk-form-custom='')
+            //-         input.uk-button.uk-button-default(type='file', name="blogimage")
+            //-         button.uk-button.uk-button-default(type='button', tabindex='-1') Select Image
             .uk-margin
-                div(uk-form-custom='')
-                    input(type='file', name="blogimage")
-                    button.uk-button.uk-button-default(type='button', tabindex='-1') Select Image
+                input(type='file', name="blogimage")          
             .uk-margin
                 input(class="uk-button uk-button-default", type="submit", name="submit", value="Submit Post")
