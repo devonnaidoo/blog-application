@@ -12,6 +12,7 @@ router.get("/add", function(req, res, next) {
   var topics = db.get("topics");
   topics.find({}, {}, (err, topics) => {
     res.render("newTopic", { title: "New Topic", topics: topics });
+    console.log(topics);
   });
 });
 
@@ -30,9 +31,16 @@ router.post("/add", function(req, res, next) {
       errors: errors
     });
   } else {
-    var posts = db.get("topics");
+    var topics = db.get("topics");
+
+    // Find if the array contains an object by comparing the property value
+    // if (persons.some(person => person.name === "H")) {
+    //   document.write("Object found inside the array.");
+    // } else {
+    //   document.write("Object not found.");
+    // }
     // Add to db
-    posts.insert(
+    topics.insert(
       {
         name: topic
       },
