@@ -31,9 +31,9 @@ router.post("/add", upload.single("blogimage"), function(req, res, next) {
   }
 
   // Form Validation
-  req.checkBody("title", "Oops, your post requires a title").notEmpty;
-  req.checkBody("body", "Oops, your post requires a body").notEmpty;
-  req.checkBody("author", "Oops, your post requires a author").notEmpty;
+  req.checkBody("title", "Oops, your post requires a title").notEmpty();
+  req.checkBody("body", "Oops, your post requires a body").notEmpty();
+  req.checkBody("author", "Oops, your post requires a author").notEmpty();
 
   // Checking Errors
   var errors = req.validationErrors();

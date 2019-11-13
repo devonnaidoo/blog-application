@@ -21,7 +21,7 @@ block content
                 label.uk-form-label(for='form-horizontal-select') Topic
                 .uk-form-controls
                     select#form-horizontal-select.uk-select(name="topic")
-                        option(value="disabled") Select a topic
+                    
                         each topic, i in topics
                             option(value="#{topic.name}") #{topic.name}
             .uk-margin
@@ -32,3 +32,6 @@ block content
                     button.uk-button.uk-button-default(type='button', tabindex='-1') Select Image       
             .uk-margin
                 input(class="uk-button uk-button-default", type="submit", name="submit", value="Submit Post")
+            script(src="/vendor/ckeditor/ckeditor.js")
+            script
+                | CKEDITOR.replace('body');
