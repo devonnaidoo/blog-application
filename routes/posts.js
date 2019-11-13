@@ -27,6 +27,7 @@ router.post("/add", upload.single("blogimage"), function(req, res, next) {
   }
 
   req.checkBody("title", "Oops, your post requires a title");
+  req.checkBody("body", "Oops, your post requires a body");
 });
 
 module.exports = router;
