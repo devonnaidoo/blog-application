@@ -3,6 +3,8 @@ var router = express.Router();
 var multer = require("multer");
 // Handle File Uploads
 var upload = multer({ dest: "uploads/" });
+var mongo = require("mongodb");
+var db = require("monk")("localhost/blogapp");
 
 /* GET listing. */
 router.get("/add", function(req, res, next) {
@@ -30,6 +32,37 @@ router.post("/add", upload.single("blogimage"), function(req, res, next) {
   req.checkBody("title", "Oops, your post requires a title").notEmpty;
   req.checkBody("body", "Oops, your post requires a body").notEmpty;
   req.checkBody("author", "Oops, your post requires a author").notEmpty;
+
+  // Checking Errors
+  var errors = req.validationErrors();
+
+  if (errors) {
+    res.render("newPost", {
+      errors: errors
+    });
+  } else {
+    var posts = db.get("posts");
+    posts.insert(
+      {
+        title: title,
+        author: author,
+        topic: topic,
+        body: body,
+        author: author,
+        blogimage: blogimage,
+        date: date
+      },
+      (err, post) => {
+        if (err) {
+          res.send(err);
+        } else {
+          req.flash("success", "Post Added");
+          res.location("/");
+          res.redirect("/");
+        }
+      }
+    );
+  }
 });
 
 module.exports = router;
