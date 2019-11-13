@@ -15,7 +15,7 @@ var mongo = require("mongodb");
 var db = require("monk")("localhost/blogapp");
 
 var indexRouter = require("./routes/index");
-var usersRouter = require("./routes/users");
+var posts = require("./routes/posts");
 
 var app = express();
 
@@ -57,7 +57,7 @@ app.use((req, res, next) => {
 });
 
 app.use("/", indexRouter);
-app.use("/users", usersRouter);
+app.use("/posts", posts);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
