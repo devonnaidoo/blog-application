@@ -7,7 +7,7 @@ var bodyParser = require("body-parser");
 var session = require("express-session");
 var multer = require("multer");
 // Handle File Uploads
-var upload = multer({ dest: "./uploads" });
+var upload = multer({ dest: "./uploads/" });
 
 var expressValidator = require("express-validator");
 
