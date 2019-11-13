@@ -2,7 +2,7 @@ extends layout
 
 block content
     .uk-container.uk-margin-top
-        h1.uk-padding Add a new topic
+        h1.uk-padding.add-heading Add a new topic
         ul
             if errors 
                 each error, i in errors
@@ -10,8 +10,8 @@ block content
         h3 Available Topics : 
             each topic, i in topics
                 span.uk-label.uk-margin-right #{topic.name}
-        .uk-container.uk-margin
-            form.uk-form-horizontal.uk-margin-large(method='post', action='/topics/add', enctype='multipart/form-data')
+        .uk-container.form-margin
+            form.uk-form-horizontal.uk-margin-large(method='post', action='/topics/add')
                 .uk-margin
                     label.uk-form-label(for='form-horizontal-text') Topic
                     .uk-form-controls
