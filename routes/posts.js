@@ -21,10 +21,12 @@ router.post("/add", upload.single("blogimage"), function(req, res, next) {
   var date = new Date();
 
   if (req.file) {
-    console.log("true");
+    var blogimage = req.file.filename;
   } else {
-    console.log("false" + req.file);
+    var blogimage = "default-image.jpg";
   }
+
+  req.checkBody("title", "Oops, your post requires a title");
 });
 
 module.exports = router;
