@@ -21,6 +21,9 @@ block content
                 label.uk-form-label(for='form-horizontal-select') Topic
                 .uk-form-controls
                     select#form-horizontal-select.uk-select(name="topic")
+                        option(value="disabled") Select a topic
+                        each topic, i in topics
+                            option(value="#{topic.name}") #{topic.name}
             .uk-margin
                 textarea.uk-textarea(rows='5', placeholder='The floor is yours', name="body", id="body")
             .uk-margin
