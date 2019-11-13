@@ -3,7 +3,9 @@ var router = express.Router();
 
 /* GET listing. */
 router.get("/add", function(req, res, next) {
-  res.send("respond with a resource");
+  res.render("newPost", {
+    title: "New Post"
+  });
 });
 
 module.exports = router;
