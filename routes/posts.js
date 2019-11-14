@@ -8,10 +8,22 @@ var mongo = require("mongodb");
 var db = require("monk")("localhost/blogapp");
 
 /* GET listing. */
+router.get("/show/:id", function(req, res, next) {
+  var posts = db.get("posts");
+  posts.findById(req.params.id, (err, post) => {
+    res.render("newPost", {
+      post: post
+    });
+  });
+});
+
 router.get("/add", function(req, res, next) {
   var topics = db.get("topics");
   topics.find({}, {}, (err, topics) => {
-    res.render("newPost", { title: "New Post", topics: topics });
+    res.render("newPost", {
+      title: "New Post",
+      topics: topics
+    });
   });
 });
 
