@@ -14,8 +14,9 @@ block content
                                 time #{moment(post.date).format("dddd, MMM Do YYYY")}
                 .uk-card-body
                     article
-                        p
-                            != post.body
+                        p.uk-display-inline
+                            !=truncateText(post.body, 400) 
+                            span.uk-display-inline  .....
                     if post.topic == "Tech"
                         span.uk-label #{post.topic}
                     else if post.topic == "Nature"
