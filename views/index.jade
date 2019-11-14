@@ -15,7 +15,7 @@ block content
                 .uk-card-body
                     article
                         p
-                            | #{post.body}
+                            != post.body
                     if post.topic == "Tech"
                         span.uk-label #{post.topic}
                     else if post.topic == "Nature"

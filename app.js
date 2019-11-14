@@ -20,6 +20,11 @@ var topics = require("./routes/topics");
 
 var app = express();
 
+app.locals.truncateText = function(text, length) {
+  var truncateText = text.substring(0, length);
+  return truncateText;
+};
+
 // To make moment accessible globally
 app.locals.moment = require("moment");
 
