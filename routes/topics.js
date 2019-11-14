@@ -8,6 +8,16 @@ var mongo = require("mongodb");
 var db = require("monk")("localhost/blogapp");
 
 /* GET listing. */
+
+// :topic is dynamic and get the id of the label
+router.get("/show/:topic", function(req, res, next) {
+  var posts = db.get("posts");
+
+  posts.find({ topic: req.params.topic }, {}, (err, posts) => {
+    res.render("index", { title: req.params.topic, posts: posts });
+  });
+});
+
 router.get("/add", function(req, res, next) {
   var topics = db.get("topics");
   topics.find({}, {}, (err, topics) => {
