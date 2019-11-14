@@ -28,3 +28,19 @@ nav {
   margin: 0px 100px 50px 100px;
   border-bottom: 1px solid rgb(233, 233, 233);
 }
+
+/* Topic Tag */
+.topic-tag {
+  display: block;
+  background-color: rgb(15, 15, 15);
+  color: #ffffff;
+  width: fit-content;
+  padding: 3px 8px;
+  margin: 5px;
+  border-radius: 5px;
+}
+.topic-tag:hover {
+  background-color: rgb(54, 54, 54);
+  color: #ffffff;
+  border-radius: 0px;
+}
