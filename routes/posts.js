@@ -10,10 +10,9 @@ var db = require("monk")("localhost/blogapp");
 /* GET listing. */
 router.get("/show/:id", function(req, res, next) {
   var posts = db.get("posts");
-  posts.findById(req.params.id, (err, post) => {
-    res.render("newPost", {
-      post: post
-    });
+
+  posts.findOne({ _id: req.params.id }).then(post => {
+    res.render("show", { post: post });
   });
 });
 
