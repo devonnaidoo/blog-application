@@ -14,8 +14,7 @@ block content
             article
                 p.uk-display-inline
                     !=post.body
-            span.uk-label 
-                a(href="/topics/show/#{post.topic}") #{post.topic}
+            a.topic-tag(href="/topics/show/#{post.topic}") #{post.topic}
         img(src="/images/#{post.blogimage}")
         br
         .container
