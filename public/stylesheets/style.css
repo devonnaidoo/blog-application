@@ -69,3 +69,16 @@ nav {
 .show-post {
   color: #ffffff !important;
 }
+
+/* Large Mobile and below */
+@media screen and (max-width: 720px) {
+  .logo-lg {
+    display: none;
+  }
+}
+/* Large Mobile and above */
+@media screen and (min-width: 720px) {
+  .logo-sm {
+    display: none;
+  }
+}

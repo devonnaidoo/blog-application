@@ -23,22 +23,24 @@ block content
                     p #{comment.name}
                     p #{comment.body}
                 br
-    h3 Add Comment
-    if errors
-        ul
-            each error, i in errors
-                li #{error.msg}
-    .uk-container.form-margin
-        form.uk-form-horizontal.uk-margin-large(method='post', action='/posts/addComment')
-            .uk-margin
-                .uk-form-controls
-                    input#form-horizontal-text.uk-input(type='hidden', name="postid", value="#{post._id}")
-            .uk-margin
-                label.uk-form-label(for='form-horizontal-text') Name
-                .uk-form-controls
-                    input#form-horizontal-text.uk-input(type='text', placeholder="Add name here", name="name")
-            .uk-margin
-                textarea.uk-textarea(rows='5', placeholder='Add comment here', name="body", id="body")
-            .uk-margin
-                input(class="uk-button uk-button-default", type="submit", name="submit", value="Commit")    
+    
+    .uk-container
+        h3 Add Comment
+        if errors
+            ul
+                each error, i in errors
+                    li #{error.msg}
+        .uk-container.form-margin
+            form.uk-form-horizontal.uk-margin-large(method='post', action='/posts/addComment')
+                .uk-margin
+                    .uk-form-controls
+                        input#form-horizontal-text.uk-input(type='hidden', name="postid", value="#{post._id}")
+                .uk-margin
+                    label.uk-form-label(for='form-horizontal-text') Name
+                    .uk-form-controls
+                        input#form-horizontal-text.uk-input(type='text', placeholder="Add name here", name="name")
+                .uk-margin
+                    textarea.uk-textarea(rows='5', placeholder='Add comment here', name="body", id="body")
+                .uk-margin
+                    input(class="uk-button uk-button-default", type="submit", name="submit", value="Commit")    
 
