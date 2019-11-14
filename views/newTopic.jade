@@ -2,16 +2,17 @@ extends layout
 
 block content
     .uk-container.uk-margin-top
-        h1.uk-padding.add-heading Add a new topic
+  
+        h1.uk-padding.add-heading ADD TOPIC
         ul
             if errors 
                 each error, i in errors
                     li #{error.msg}
         .available-topics
-            h3 Available Topics : 
+            h3 Available Topics
             if topics
                 each topic, i in topics
-                    span.topic-tag #{topic.name}
+                    span.topic-tag-newTopic #{topic.name}
         .uk-container.form-margin
             form.uk-form-horizontal.uk-margin-large(method='post', action='/topics/add')
                 .uk-margin

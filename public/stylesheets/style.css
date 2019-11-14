@@ -24,8 +24,11 @@ nav {
 }
 
 .available-topics {
+  background-color: rgb(243, 243, 243);
   text-align: center;
   margin: 0px 100px 50px 100px;
+  padding: 50px 100px 50px 100px;
+  border-top: 1px solid rgb(233, 233, 233);
   border-bottom: 1px solid rgb(233, 233, 233);
 }
 
@@ -37,10 +40,26 @@ nav {
   width: fit-content;
   padding: 3px 8px;
   margin: 5px;
-  border-radius: 5px;
+  border-radius: 0px;
 }
 .topic-tag:hover {
+  transition-duration: 0.5s;
   background-color: rgb(54, 54, 54);
   color: #ffffff;
+  border-radius: 5px;
+}
+.topic-tag-newTopic {
+  display: inline-flex;
+  background-color: rgb(15, 15, 15);
+  color: #ffffff;
+  width: fit-content;
+  padding: 3px 8px;
+  margin: 5px;
   border-radius: 0px;
+}
+.topic-tag-newTopic:hover {
+  transition-duration: 0.5s;
+  background-color: rgb(54, 54, 54);
+  color: #ffffff;
+  border-radius: 5px;
 }
