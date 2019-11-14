@@ -21,7 +21,7 @@ router.post("/add", function(req, res, next) {
   var topic = req.body.topic;
 
   // Form Validation
-  req.checkBody("topic", "Oops, your post requires a title").notEmpty();
+  req.checkBody("topic", "Oops, you forgot to add a topic").notEmpty();
 
   // Checking Errors
   var errors = req.validationErrors();
