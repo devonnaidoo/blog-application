@@ -79,4 +79,58 @@ router.post("/add", upload.single("blogimage"), function(req, res, next) {
   }
 });
 
+// Getting info from comment form
+router.post("/addcomment", function(req, res, next) {
+  // Storing form values
+  var postid = req.body.postid;
+  var name = req.body.name;
+  var body = req.body.body;
+  var commentdate = new Date();
+
+  // Form Validation
+  req.checkBody("name", "Oops, your comment requires a name").notEmpty();
+  req.checkBody("body", "Oops, your comment requires a body").notEmpty();
+
+  // Checking Errors
+  var errors = req.validationErrors();
+
+  if (errors) {
+    var posts = db.get("posts");
+    posts.findById(postid, function(err, post) {
+      res.render("show", {
+        errors: errors,
+        post: post
+      });
+    });
+  } else {
+    var comment = {
+      name: name,
+      body: body,
+      commentdate: commentdate
+    };
+
+    var posts = db.get("posts");
+
+    posts.update(
+      {
+        _id: postid
+      },
+      {
+        $push: {
+          comments: comment
+        }
+      },
+      function(err, doc) {
+        if (err) {
+          throw err;
+        } else {
+          req.flash("success", "Comment added");
+          res.location("/posts/show/" + postid);
+          res.redirect("/posts/show/" + postid);
+        }
+      }
+    );
+  }
+});
+
 module.exports = router;
