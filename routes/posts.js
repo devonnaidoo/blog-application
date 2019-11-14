@@ -2,7 +2,7 @@ var express = require("express");
 var router = express.Router();
 var multer = require("multer");
 // Handle File Uploads
-var upload = multer({ dest: "uploads/" });
+var upload = multer({ dest: "./public/images" });
 var expressValidator = require("express-validator");
 var mongo = require("mongodb");
 var db = require("monk")("localhost/blogapp");

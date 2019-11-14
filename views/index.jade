@@ -18,6 +18,7 @@ block content
                             !=truncateText(post.body, 400) 
                             span.uk-display-inline  .....
                     span.uk-label #{post.topic}
+                    img(src="/images/#{post.blogimage}")
                 .uk-card-footer
                     a.uk-button.uk-button-text.uk-align-center(href='/posts/show/#{post._id}', target="_blank") Read more
                     
