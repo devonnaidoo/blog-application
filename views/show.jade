@@ -11,11 +11,28 @@ block content
                     p.uk-text-meta.uk-margin-remove-top
                         time #{moment(post.date).format("dddd, MMM Do YYYY")}
         .uk-card-body
+            img(src="/images/#{post.blogimage}", class="image-control")
             article
                 p.uk-display-inline
                     !=post.body
             a.topic-tag(href="/topics/show/#{post.topic}") #{post.topic}
-        img(src="/images/#{post.blogimage}")
+
+            
+    .uk-card.uk-card-default.uk-card-hover.uk-margin-large.uk-align-center(class='uk-width-1-2@m')
+        .uk-card-header
+            .uk-grid-small.uk-flex-middle(uk-grid='')
+                .uk-width-expand
+                    h2.uk-card-title.uk-margin-remove-bottom #{post.title}
+                    p.uk-text-meta.uk-margin-remove-top | By 
+                        strong #{post.author}
+                    p.uk-text-meta.uk-margin-remove-top
+                        time #{moment(post.date).format("dddd, MMM Do YYYY")}
+        .uk-card-body
+            img(src="/images/#{post.blogimage}", class="image-control")
+            article
+                p.uk-display-inline
+                    !=post.body
+            a.topic-tag(href="/topics/show/#{post.topic}") #{post.topic}
         br
         .container
             if post.comments
