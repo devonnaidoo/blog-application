@@ -13,7 +13,7 @@ block content
                             p.uk-text-meta.uk-margin-remove-top
                                 time #{moment(post.date).format("dddd, MMM Do YYYY")}
                 .uk-card-body
-                    img(src="/images/#{post.blogimage}")
+
                     article
                         p.uk-display-inline
                             !=truncateText(post.body, 400) 
