@@ -64,8 +64,8 @@ nav {
   border-radius: 5px;
 }
 
-/* Posts Images */
-.image-control {
-  margin: 0 0 50px 0;
-  width: 100%;
+/* Show Post Page */
+
+.show-post {
+  color: #ffffff !important;
 }
