@@ -17,10 +17,7 @@ block content
                         p.uk-display-inline
                             !=truncateText(post.body, 400) 
                             span.uk-display-inline  .....
-                    if post.topic == "Tech"
-                        span.uk-label #{post.topic}
-                    else if post.topic == "Nature"
-                        span.uk-label-success #{post.topic}
+                    span.uk-label #{post.topic}
                 .uk-card-footer
                     a.uk-button.uk-button-text.uk-align-center(href='/posts/show/#{post._id}', target="_blank") Read more
                     
