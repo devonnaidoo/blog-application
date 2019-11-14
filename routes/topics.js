@@ -33,12 +33,6 @@ router.post("/add", function(req, res, next) {
   } else {
     var topics = db.get("topics");
 
-    // Find if the array contains an object by comparing the property value
-    // if (persons.some(person => person.name === "H")) {
-    //   document.write("Object found inside the array.");
-    // } else {
-    //   document.write("Object not found.");
-    // }
     // Add to db
     topics.insert(
       {

@@ -9,6 +9,7 @@ block content
                     li #{error.msg}
         .available-topics
             h3 Available Topics : 
+            if topics
                 each topic, i in topics
                     span.uk-label.uk-margin-right #{topic.name}
         .uk-container.form-margin
