@@ -92,6 +92,23 @@ nav {
   padding-left: 5px;
 }
 
+/* Success Message */
+ul.success li {
+  padding: 20px;
+}
+.card-success {
+  animation-name: fade-out;
+  animation-duration: 5s;
+  animation-fill-mode: forwards;
+}
+@keyframes fade-out {
+  100% {
+    opacity: 0;
+    position: absolute;
+    top: -150px;
+  }
+}
+
 /* Large Mobile and below */
 @media screen and (max-width: 720px) {
   .logo-lg {

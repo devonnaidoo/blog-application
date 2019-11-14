@@ -24,8 +24,12 @@ html
             a.nav-btn(href='/posts/add', uk-icon="icon: file-edit") Add Post
           li
             a.nav-btn(href='/topics/add', uk-icon="icon: plus") Add Topic
-    != messages()
-    script(src='/javascript/main.js')
+      .container.card-success
+        .row
+          .col.l6.pull-l3.push-l3
+            .card.blue.accent-3.white-text.center
+              span.card-title!= messages()
+
   block content
 
 
