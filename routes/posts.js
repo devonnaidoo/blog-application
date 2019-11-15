@@ -85,6 +85,7 @@ router.post("/addcomment", function(req, res, next) {
   var postid = req.body.postid;
   var name = req.body.name;
   var body = req.body.body;
+  var range = req.body.range;
   var commentdate = new Date();
 
   // Form Validation
@@ -106,7 +107,8 @@ router.post("/addcomment", function(req, res, next) {
     var comment = {
       name: name,
       body: body,
-      commentdate: commentdate
+      commentdate: commentdate,
+      range: range
     };
 
     var posts = db.get("posts");
