@@ -22,7 +22,6 @@ router.get("/add", function(req, res, next) {
   var topics = db.get("topics");
   topics.find({}, {}, (err, topics) => {
     res.render("newTopic", { title: "New Topic", topics: topics });
-    console.log(topics);
   });
 });
 
