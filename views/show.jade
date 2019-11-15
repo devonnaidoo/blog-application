@@ -21,7 +21,7 @@ block content
                 each comment, i in post.comments
                     .comment-container
                         h5 #{comment.name} 
-                            span #{comment.range}
+                        p.uk-text-meta Rating #{comment.range} /10
                         p #{comment.body}
 
     
@@ -40,7 +40,7 @@ block content
                 .uk-margin
                     textarea.uk-textarea(rows='5', placeholder='Add comment here', name="body", id="body")
                 .uk-margin
-                    input(class="uk-range", type="range", name="range", value="0", min="0", max="10", step="1")
+                    input(class="uk-range", type="range", name="range", value="0", min="0", max="10", step="1", placeholder="Test")
    
                 .uk-margin
                     input(class="uk-button uk-button-default", type="submit", name="submit", value="Commit")    
